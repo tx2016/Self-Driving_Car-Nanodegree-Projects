@@ -1,6 +1,13 @@
 import pickle
 import tensorflow as tf
 # TODO: import Keras layers you need here
+import numpy as np
+from keras.layers import Input, Flatten, Dense
+from keras.models import Model
+
+
+
+
 
 flags = tf.app.flags
 FLAGS = flags.FLAGS
@@ -8,6 +15,8 @@ FLAGS = flags.FLAGS
 # command line flags
 flags.DEFINE_string('training_file', '', "Bottleneck features training file (.p)")
 flags.DEFINE_string('validation_file', '', "Bottleneck features validation file (.p)")
+
+
 
 
 def load_bottleneck_data(training_file, validation_file):
@@ -47,7 +56,15 @@ def main(_):
     # 10 for cifar10
     # 43 for traffic
 
+    num_class = len(np.unique(y_train))
+    inpu = Input(shape=(X_train.shape[1:]))
+    outpu = Flatten()(inpu)
+    outpu = Dense(num_class, activation='softmax')(outpu)
+    model = Model(inpu, outpu)
+    model.compile('adam', 'sparse_categorical_crossentropy', ['accuracy'])
     # TODO: train your model here
+    model.fit(X_train, y_train, batch_size=256, nb_epoch=50, validation_data=(X_val, y_val), shuffle=True)
+
 
 
 # parses flags and calls the `main` function above
