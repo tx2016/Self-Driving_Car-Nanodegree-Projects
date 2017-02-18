@@ -75,7 +75,7 @@ The histogram of the training data shows the distribution of the data is highly 
 
 ## Data Augumentation
 
-To increase the number of training samples, besides the center image, the left and right images could be used. Concretly, an offset is added with respect to the steering angle associated with the center image to the left image, and subtracted to the right image. The reason is that when the car turns left, the angle needed for the left image becomes smaller and the angle needed for the right image becomes bigger. This would allow the model to learn how to steer if the car drifts off to the left or the right.
+To increase the number of training samples, besides the center image, the left and right images could be used. Concretly, an offset is added with respect to the steering angle associated with the center image to the left image, and subtracted to the right image. The reason is that when the car turns left, the angle needed for the left image becomes smaller and the angle needed for the right image becomes bigger. This would allow the model to learn how to steer if the car drifts off to the left or the right. The offset is set as 0.24, after trials and errors.
  
 
 <p align="center">
@@ -117,7 +117,7 @@ Adam optimzer is used to avoid manual learning rate adjustment. Learning rate is
 ## Result
 The validation loss reaches 0.0171 at the fourth epoch.
 <p align="center">
-    <img src="image/Loss_result.png" width="360"/>
+    <img src="image/Loss_result.png" width="600"/>
 </p>
   
 ## Drive.py 
