@@ -79,7 +79,7 @@ To increase the number of training samples, besides the center image, the left a
  
 
 <p align="center">
-    <img src="image/offset_image.png" width="360"/>
+    <img src="image/offset_image.png" width="600"/>
 </p>
 
 * Adjust Brightness
@@ -98,7 +98,7 @@ The shadow shape is randomly generated to simulate the shadow effect in the fant
 The sky and the hood of the car is cropped and all the images are resize to 64 x 64 for training.This function is also included in the drive.py.
 
 <p align="center">
-    <img src="image/data_augumented.png" width="360"/>
+    <img src="image/data_augumented.png" width="600"/>
     <br>Augumented images<br>
 </p>
   
@@ -107,8 +107,7 @@ The model is implemented in Keras, the first layer is a lambda layer to normaliz
 
 20% of the training data are used as validation set.
 <p align="center">
-    <img src="image/CNN_model.png" width="360"/>
-    <br>Augumented images<br>
+    <img src="image/CNN_model.png" width="600"/>
 </p> 
 
 
@@ -118,8 +117,7 @@ Adam optimzer is used to avoid manual learning rate adjustment. Learning rate is
 ## Result
 The validation loss reaches 0.0171 at the fourth epoch.
 <p align="center">
-    <img src="image/Loss_resut.png" width="360"/>
-    <br>Augumented images<br>
+    <img src="image/Loss_result.png" width="360"/>
 </p>
   
 ## Drive.py 
