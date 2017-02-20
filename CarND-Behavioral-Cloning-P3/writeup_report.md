@@ -50,6 +50,12 @@ Here are the essential files needed for this proejct:
 
 Use command `python drive.py model.h5` to initiate the autonomous mode in the simulator.
  
+## Dependencies
+
+This project environment can be created with CarND Term1 Starter Kit.
+
+[CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit)
+
  
 ## Data Exploration
   
