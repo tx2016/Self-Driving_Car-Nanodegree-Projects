@@ -1,7 +1,7 @@
 # Project 3: Behavior Cloning
   
 <p align="center">
-    <img src="image/track1_screenshot.png" width="360"/>
+    <img src="image/track1_screenshot.png" width="500"/>
     <br>Driving autonomously on track<br>
 </p>
   
