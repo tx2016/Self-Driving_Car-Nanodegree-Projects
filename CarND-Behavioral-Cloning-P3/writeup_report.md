@@ -143,12 +143,12 @@ The crop and resize function is included and the maximum speed is set as 20, sin
   
 * Track1 in latest simulator (Click to open video on Youtube)
   
-[![Video White](image/track1.gif?raw=true)](https://youtu.be/c0G-M_TFaOc)  
+[![Video White](image/track1.gif?raw=true width="480")](https://youtu.be/c0G-M_TFaOc)  
   
   
 * Track2 in old simulator (Click to open video on Youtube)
   
-[![Video White](image/track2.gif?raw=true)](https://youtu.be/b5GXv8t_gPc)
+[![Video White](image/track2.gif?raw=true width="480")](https://youtu.be/b5GXv8t_gPc)
 
    
 ## Reflection
