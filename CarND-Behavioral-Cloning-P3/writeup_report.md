@@ -1,7 +1,7 @@
 # Project 3: Behavior Cloning
   
 <p align="center">
-    <img src="image/track1_screenshot.png" width="500"/>
+    <img src="image/track1_screenshot.png" width="360"/>
     <br>Driving autonomously on track<br>
 </p>
   
@@ -141,14 +141,19 @@ The crop and resize function is included and the maximum speed is set as 20, sin
 
 ## How am I driving?
   
-* Track1 in latest simulator (Click to open video on Youtube)
+* Track 1 in latest simulator (Click to open video on Youtube)
   
-[![Video White](image/track1.gif?raw=true width="480")](https://youtu.be/c0G-M_TFaOc)  
+<!-- [![Video White](image/track1.gif?){width=50%}](https://youtu.be/c0G-M_TFaOc)  -->
+
+<a href="https://youtu.be/c0G-M_TFaOc"><img src="image/track1.gif" width="240"></a>
   
   
-* Track2 in old simulator (Click to open video on Youtube)
+* Track 2 in old simulator (Click to open video on Youtube)
   
-[![Video White](image/track2.gif?raw=true width="480")](https://youtu.be/b5GXv8t_gPc)
+<a href="https://youtu.be/b5GXv8t_gPc"><img src="image/track2.gif" width="240"></a>
+
+
+<!-- [![Video White](image/track2.gif?raw=true width="480")](https://youtu.be/b5GXv8t_gPc) -->
 
    
 ## Reflection
