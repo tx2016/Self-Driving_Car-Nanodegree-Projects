@@ -13,7 +13,8 @@ from sklearn.model_selection import train_test_split
 
 cars_img = glob.glob("vehicles/*/*.png")
 notcars_img = glob.glob("non-vehicles/*/*.png")
-
+# print('Final size of cars: ', len(cars_img))
+# print('Final size of cars: ', len(notcars_img))
 # cars = []
 # notcars = []
 
@@ -22,16 +23,17 @@ notcars_img = glob.glob("non-vehicles/*/*.png")
 # for ncar in notcars_img:
 #     notcars.append(cv2.imread(ncar))
 
+# sample_size = 8700
+# cars = cars_img[0:sample_size]
+# notcars = notcars_img[0:sample_size]
+cars = cars_img
+notcars = notcars_img
+
 # shuffle images
 cars = shuffle(cars)
 notcars = shuffle(notcars)
 
 
-sample_size = 6000
-cars = cars_img[0:sample_size]
-notcars = notcars_img[0:sample_size]
-print('Final size of cars: ', len(cars))
-print('Final size of non-cars: ', len(notcars))
 
 # Parameters
 color_space = 'HLS' # Can be RGB, HSV, LUV, HLS, YUV, YCrCb
@@ -74,7 +76,7 @@ y = np.hstack((np.ones(len(car_features)), np.zeros(len(notcar_features))))
 
 # Split up data into randomized training and test sets
 rand_state = np.random.randint(0, 100)
-X_train, X_test, y_train, y_test = train_test_split(scaled_X, y, test_size=0.2, random_state=23)
+X_train, X_test, y_train, y_test = train_test_split(scaled_X, y, test_size=0.2, random_state=rand_state)
 
 print('Using:',orient,'orientations',pix_per_cell, 'pixels per cell and', cell_per_block,'cells per block')
 print('Feature vector length:', len(X_train[0]))
