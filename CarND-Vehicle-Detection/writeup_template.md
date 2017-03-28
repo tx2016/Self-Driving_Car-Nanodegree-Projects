@@ -99,8 +99,8 @@ Ultimately I searched on two scales, 120 x 120 and 110 x 110 using HLS 3-channel
     <img src="images/videoscreenshot3.png" width="480"/>
     <br>Vehicle Detection Screenshots<br>
 </p>
----
 
+---
 ### Video Implementation
 
 ####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
@@ -127,8 +127,8 @@ Here's an example result showing the heatmap from a series of frames of video, t
     <img src="images/heatmap3.png" width="480"/>
     <br>Heatmap for Six Frames<br>
 </p>
----
 
+---
 ###Files
 
 Here are the essential files needed for this proejct:
