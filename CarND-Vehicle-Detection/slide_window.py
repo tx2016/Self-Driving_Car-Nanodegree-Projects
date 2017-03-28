@@ -40,11 +40,19 @@ def add_heat(heatmap, bbox_list):
     return heatmap# Iterate through list of bboxes
 
 
-def apply_threshold(heatmap, threshold):
-    # Zero out pixels below the threshold
-    heatmap[heatmap <= threshold] = 0
-    # Return thresholded map
-    return heatmap
+heat_buffer = deque([], 10)
+def apply_threshold(heatmap, threshold, video=True):
+    if video:
+        global heat_buffer
+        heat_buffer.append(heatmap)
+        avg_heatmap = sum(heat_buffer)
+        avg_heatmap[avg_heatmap <= threshold] = 0
+        return avg_heatmap
+    else:
+        # Zero out pixels below the threshold
+        heatmap[heatmap <= threshold] = 0
+        # Return thresholded map
+        return heatmap
 
 
 # Define a function to draw bounding boxes
@@ -124,11 +132,12 @@ def slide_window(img, x_start_stop=[None, None], y_start_stop=[None, None],
 
 # Define a function you will pass an image 
 # and the list of windows to be searched (output of slide_windows())
-def search_windows(img, windows, clf, scaler, color_space=color_space, 
-                    spatial_size=spatial_size, hist_bins=hist_bins, orient=orient, 
-                    pix_per_cell=pix_per_cell, cell_per_block=cell_per_block, 
-                    hog_channel=hog_channel, spatial_feat=spatial_feat, 
-                    hist_feat=hist_feat, hog_feat=hog_feat):
+def search_windows(img, windows, clf, scaler, color_space='RGB',
+                    spatial_size=(32, 32), hist_bins=32,
+                    hist_range=(0, 256), orient=9,
+                    pix_per_cell=8, cell_per_block=2,
+                    hog_channel=0, spatial_feat=True,
+                    hist_feat=True, hog_feat=True):
 
     #1) Create an empty list to receive positive detection windows
     on_windows = []
