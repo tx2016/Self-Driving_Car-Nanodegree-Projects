@@ -40,7 +40,7 @@ def add_heat(heatmap, bbox_list):
     return heatmap# Iterate through list of bboxes
 
 
-heat_buffer = deque([], 10)
+heat_buffer = deque([], 20)
 def apply_threshold(heatmap, threshold, video=True):
     if video:
         global heat_buffer
